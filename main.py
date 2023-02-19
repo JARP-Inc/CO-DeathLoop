@@ -1,6 +1,8 @@
 import bogoSort
 import timeCheck
 import weather
+import RAM
+import infiniteMonkeys
 import timeit
 
  
@@ -10,26 +12,37 @@ def main():
     start = timeit.default_timer()
 
     timesRan = 0
-    exit = 0
-    while(exit < 1):
+    while(True):
         timesRan += 1
         
         #3, 2, 4, 1, 0, 5, 7, 2, 6, 7, 8, 3
-        if bogoSort.bogoSort([3, 2, 4, 1, 0, 5]) == True:
-            exit += 1
+        if bogoSort.bogoSort([3, 2, 4, 1, 0, 5]) != True:
+            continue
         
-        if timeCheck() == True:
-            exit += 1
+        if timeCheck() != True:
+            continue
 
-        if weather() == True:
-            exit += 1
+        if weather() != True:
+            continue
 
-        if timesRan%3.142 == 0:
-            exit += 1
+        if timesRan%3.142 != 0:
+            continue
+
+        if RAM() != True:
+            continue
+
+        if infiniteMonkeys() != True:
+            continue
+        
+        
+
+        break
+        
 
     stop = timeit.default_timer()
 
     print('Time: ', stop - start)
+    print("Times ran: " + timesRan)
     
 
 
@@ -41,5 +54,7 @@ main()
 #2: current time is at 0 seconds                    Done
 #3: stellaris dashboard (use if all else fails)
 #4: weather api                                     Done
-#5: check computer's ram usage
+#5: check computer's ram usage                      Done
 #6: is times ran divisible by pi                    Done
+#7: infinite monkeys principle                      Done
+#8: 
