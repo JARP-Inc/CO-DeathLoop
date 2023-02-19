@@ -1,10 +1,11 @@
 import bogoSort
-import stellarisDashboard
 import timeCheck
-import speedCheck
 import weather
 import RAM
 import infiniteMonkeys
+import speedCheck
+import stellarisDashboard
+import horseRace
 import timeit
 
  
@@ -24,25 +25,28 @@ def main():
         if bogoSort.bogoSort([3, 2, 4, 1, 0, 5]) != True:
             continue
         
-        if timeCheck() != True:
+        if timeCheck.timeCheck() != True:
             continue
 
-        if weather() != True:
+        if weather.weather() != True:
             continue
 
         if timesRan%3.142 != 0:
             continue
 
-        if RAM() != True:
+        if RAM.RAM() != True:
             continue
 
-        if infiniteMonkeys() != True:
+        if infiniteMonkeys.infiniteMonkeys() != True:
             continue
         
-        if speedCheck() != True:
+        if speedCheck.speedCheck() != True:
             continue
         
-        if stellarisDashboard() != True:
+        if stellarisDashboard.stellarisDashboard() != True:
+            continue
+
+        if horseRace.horseRace() != True:
             continue
 
         break
@@ -67,3 +71,4 @@ main()
 #6: infinite monkeys principle                      Done
 #7: speed check                                     Done
 #8: stellaris dashboard (use if all else fails)     Done
+#9: race conditions                                 Done?
